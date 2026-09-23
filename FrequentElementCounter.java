@@ -1,9 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class FrequentElementCounter {
-
-    // Logic from the Solution class
+public class FrequentElementCounter { 
     public static int countOccurence(int[] arr, int k) {
         int n = arr.length;
         int threshold = n / k;
