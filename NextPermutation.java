@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class c {
+public class NextPermutation {
     public static void nextPermutation(int[] arr) {
         int n = arr.length;
         int index = -1;
