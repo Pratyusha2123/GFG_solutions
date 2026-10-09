@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SortByDecreasingFrequency {
+public class SortByDecreasingFrequency  {
     public List<Integer> sortByFreq(int[] arr) {
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int num : arr) {
