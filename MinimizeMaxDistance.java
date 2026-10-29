@@ -26,7 +26,6 @@ public class MinimizeMaxDistance {
             double gap = stations[i + 1] - stations[i];
             requiredStations += (int) (gap / maxDist);
         }
-
         return requiredStations <= k;
     }
     public static void main(String[] args) {
