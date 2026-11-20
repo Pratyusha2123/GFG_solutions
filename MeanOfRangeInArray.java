@@ -1,27 +1,24 @@
 import java.util.ArrayList;
 
 class MeanOfRangeInArray {
-    
+
     public static ArrayList<Integer> findMean(int[] arr, int[][] queries) {
         int n = arr.length;
-        long[] prefSum = new long[n];
-        prefSum[0] = arr[0];
-        for (int i = 1; i < n; i++) {
-            prefSum[i] = prefSum[i - 1] + arr[i];
+        long[] prefixSum = new long[n + 1];
+
+        for (int i = 0; i < n; i++) {
+            prefixSum[i + 1] = prefixSum[i] + arr[i];
         }
-        
+
         ArrayList<Integer> result = new ArrayList<>();
-        
         for (int[] query : queries) {
             int l = query[0];
             int r = query[1];
-            
-            long sum = (l == 0) ? prefSum[r] : prefSum[r] - prefSum[l - 1];
-            int count = (r - l + 1);
-            int mean = (int) (sum / count);
-            result.add(mean);
+            long sum = prefixSum[r + 1] - prefixSum[l];
+            int count = r - l + 1;
+            result.add((int) (sum / count));
         }
-        
+
         return result;
     }
 
